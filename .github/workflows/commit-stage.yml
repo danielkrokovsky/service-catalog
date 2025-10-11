@@ -25,8 +25,7 @@ jobs:
           severity-cutoff: high
           acs-report-enable: true 
       - name: Upload vulnerability report 
-        uses: github/codeql-action/upload-sarif@v3
-        token: GITHUB_TOKEN
+        uses: github/codeql-action/upload-sarif@v3.28.4
         if: success() || failure()
         with: 
           sarif_file: ${{ steps.scan.outputs.sarif }}
